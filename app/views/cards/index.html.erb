@@ -1,0 +1,8 @@
+<h1>index</h1>
+
+
+<%=@cards.each do |card|%>
+  <%if card.player_class == "Mage"%>
+    <img src= <%=card.img%> alt="card image" >
+    <%end%>
+  <%end%>
