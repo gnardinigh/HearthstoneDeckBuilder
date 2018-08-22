@@ -1,20 +1,27 @@
 <h1>index</h1>
 
 
-
-
-
 <div style="width: 100%; overflow: hidden;">
 
   <div style="width: 900px; float: left;">
     <h1><%=@cards.last.player_class%> Cards!</h1>
     <%@cards.each do |card|%>
+                                      <%= form_tag({controller: "cards", action: "add_to_deck"}, method: "post") do %>
+
+                                        <%=select_tag "count","<option>0 - #{card.name}</option><option>1 - #{card.name}</option><option>2 - #{card.name}</option>".html_safe%>
+                                        <%= submit_tag("Submit") %>
+                                        <% end %>
       <img src= <%=card.img%> alt="class card image" >
     <%end%>
   </div>
   <div style="margin-left: 600px;">
     <h1>Neutral Cards!</h1>
     <%@neutral_cards.each do |card|%>
+                                        <%= form_tag({controller: "cards", action: "add_to_deck"}, method: "post") do %>
+
+                                          <%=select_tag :num_cards,"<option>0 - #{card.name}</option><option>1 - #{card.name}</option><option>2 - #{card.name}</option>".html_safe%>
+                                          <%= submit_tag("Submit") %>
+                                          <% end %>
       <img src= <%=card.img%> alt="neutral card image" >
     <%end%>
   </div>
