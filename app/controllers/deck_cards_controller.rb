@@ -5,6 +5,8 @@ class DeckCardsController < ApplicationController
     flash[:notice] = "Card Added! Congrats"
   end
 
+  def reload
+  end
 
 
 

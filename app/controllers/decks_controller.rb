@@ -14,6 +14,7 @@ class DecksController < ApplicationController
 
   def add_to_deck
 
+    render :new
   end
 
   def create
