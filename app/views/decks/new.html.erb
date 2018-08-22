@@ -20,11 +20,15 @@
   <div style="margin-left: 600px;">
     <h1>Neutral Cards!</h1>
     <%@neutral_cards.each do |card|%>
+<<<<<<< HEAD
                                         <%= form_tag({controller: "deck_cards", action: "add_to_deck"}, method: "post") do %>
+=======
+       <%= form_tag({controller: "deckcards", action: "create"}, method: "post") do %>
+>>>>>>> 860949e665ab4d6e563280fabe9c4c1388b65acf
 
-                                          <%=select_tag :num_cards,"<option>0 - #{card.id}</option><option>1 - #{card.id}</option><option>2 - #{card.id}</option>".html_safe%>
-                                          <%= submit_tag("Submit") %>
-                                          <% end %>
+        <%=select_tag :num_cards,"<option>0 - #{card.id}</option><option>1 - #{card.id}</option><option>2 - #{card.id}</option>".html_safe%>
+        <%= submit_tag("Submit") %>
+        <% end %>
       <img src= <%=card.img%> alt="neutral card image" >
     <%end%>
   </div>
