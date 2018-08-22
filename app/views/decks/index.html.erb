@@ -7,13 +7,13 @@
 
 <div style="width: 100%; overflow: hidden;">
   <div style="width: 375px; float: left;">
+  <%= link_to image_tag("druid_face001.png") , new_deck_path(commit: 'Druid') %>
     <%=image_tag("druid_face001.png")%>
-                        <%= form_tag({controller: "decks", action: "new"}, method: "get") do %>
+     <%= form_tag({controller: "decks", action: "new"}, method: "get") do %>
 
-                          <%= submit_tag("Druid") %>
-                        <% end %>
+        <%= submit_tag("Druid") %>
+      <% end %>
     <%=image_tag("druid_icon002.png")%>
-
   </div>
   <div style="margin-left: 350px;">
     <%=image_tag("hunter_face003.png")%>
