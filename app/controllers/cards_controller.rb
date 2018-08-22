@@ -6,8 +6,8 @@ class CardsController < ApplicationController
     @selection_range = [{num:0},{num:1},{num:2}]
   end
 
-  def add_to_deck
-    byebug
+  def create_deck
+
   end
 
 
