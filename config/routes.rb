@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users
 
 
-  post '/cards/add_to_deck', to: 'decks#add_to_deck'
+post '/deckcards/create', to: 'deckcards#create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
