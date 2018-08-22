@@ -8,88 +8,42 @@
 <div style="width: 100%; overflow: hidden;">
   <div style="width: 375px; float: left;">
   <%= link_to image_tag("druid_face001.png") , new_deck_path(commit: 'Druid') %>
-    <%=image_tag("druid_face001.png")%>
-     <%= form_tag({controller: "decks", action: "new"}, method: "get") do %>
-
-        <%= submit_tag("Druid") %>
-      <% end %>
-    <%=image_tag("druid_icon002.png")%>
   </div>
   <div style="margin-left: 350px;">
-    <%=image_tag("hunter_face003.png")%>
-    <%= form_tag({controller: "decks", action: "new"}, method: "get") do %>
-
-      <%= submit_tag("Hunter") %>
-    <% end %>
-    <%=image_tag("hunter_icon004.png")%>
+    <%= link_to image_tag("hunter_face003.png") , new_deck_path(commit: 'Hunter') %>
   </div>
 </div>
 
 <div style="width: 100%; overflow: hidden;">
   <div style="width: 375px; float: left;">
-    <%=image_tag("mage_face005.png")%>
-    <%= form_tag({controller: "decks", action: "new"}, method: "get") do %>
-
-      <%= submit_tag("Mage") %>
-    <% end %>
-    <%=image_tag("mage_icon006.png")%>
+    <%= link_to image_tag("mage_face005.png") , new_deck_path(commit: 'Mage') %>
   </div>
   <div style="margin-left: 350px;">
-    <%=image_tag("paladin_face007.png")%>
-    <%= form_tag({controller: "decks", action: "new"}, method: "get") do %>
-
-      <%= submit_tag("Paladin") %>
-    <% end %>
-    <%=image_tag("paladin_icon008.png")%>
+    <%= link_to image_tag("paladin_face007.png") , new_deck_path(commit: 'Paladin') %>
   </div>
 </div>
 
 <div style="width: 100%; overflow: hidden;">
   <div style="width: 375px; float: left;">
-    <%=image_tag("priest_face009.png")%>
-    <%= form_tag({controller: "decks", action: "new"}, method: "get") do %>
-
-      <%= submit_tag("Priest") %>
-    <% end %>
-    <%=image_tag("priest_icon010.png")%>
+    <%= link_to image_tag("priest_face009.png") , new_deck_path(commit: 'Priest') %>
   </div>
   <div style="margin-left: 350px;">
-    <%=image_tag("rogue_face011.png")%>
-    <%= form_tag({controller: "decks", action: "new"}, method: "get") do %>
-
-      <%= submit_tag("Rogue") %>
-    <% end %>
-    <%=image_tag("rogue_icon012.png")%>
+    <%= link_to image_tag("rogue_face011.png") , new_deck_path(commit: 'Rogue') %>
   </div>
 </div>
 
 <div style="width: 100%; overflow: hidden;">
   <div style="width: 375px; float: left;">
-    <%=image_tag("shaman_face013.png")%>
-    <%= form_tag({controller: "decks", action: "new"}, method: "get") do %>
-
-      <%= submit_tag("Shaman") %>
-    <% end %>
-    <%=image_tag("shaman_icon014.png")%>
+    <%= link_to image_tag("shaman_face013.png") , new_deck_path(commit: 'Shaman') %>
   </div>
   <div style="margin-left: 350px;">
-    <%=image_tag("warlock_face015.png")%>
-    <%= form_tag({controller: "decks", action: "new"}, method: "get") do %>
-
-      <%= submit_tag("Warlock") %>
-    <% end %>
-    <%=image_tag("warlock_icon016.png")%>
+    <%= link_to image_tag("warlock_face015.png") , new_deck_path(commit: 'Warlock') %>
   </div>
 </div>
 
 <div style="width: 100%; overflow: hidden;">
   <div style="width: 375px; float: left;">
-    <%=image_tag("warrior_face017.png")%>
-    <%= form_tag({controller: "decks", action: "new"}, method: "get") do %>
-
-      <%= submit_tag("Warrior") %>
-    <% end %>
-    <%=image_tag("warrior_icon018.png")%>
+    <<%= link_to image_tag("warrior_face017.png") , new_deck_path(commit: 'Warrior') %>
   </div>
   <div style="margin-left: 350px;">
     <!-- <%=image_tag("warlock_face015.png")%>
