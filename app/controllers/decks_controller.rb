@@ -2,21 +2,23 @@ class DecksController < ApplicationController
 
   def index
     @cards = Card.all
+    Deck.create()
   end
 
   def new
-    @deck = Deck.create()
-    @chosen_class = params[:commit]
-    @cards = Card.player_class(@chosen_class)
+    @@chosen_class = params[:commit]
+    @cards = Card.player_class(@@chosen_class)
     @neutral_cards = Card.player_class("Neutral")
     @selection_range = [{num:0},{num:1},{num:2}]
   end
 
   def add_to_deck
-    params[:num_cards][0].to_i.times do
-      DeckCard.create(deck_id: Deck.last.id, card_id: params[:num_cards][-5..-1].to_i)
+    repeat = params[:count][0].to_i
+    repeat.times do
+      DeckCard.create(deck_id: Deck.last.id, card_id: params[:count][-5..-1].to_i)
     end
-    byebug
+    flash[:notice] = "Created #{repeat} instances of #{DeckCard.last.card.name} in deck number #{DeckCard.last.deck.id}."
+    redirect_to new_deck_path(commit: @@chosen_class)
   end
 
   def create
