@@ -1,10 +1,21 @@
 <h1>index</h1>
 
 
-<!-- <%@cards.each do |card|%>
-  <img src= <%=card.img%> alt="card image" >
-<%end%> -->
 
-<%@heroes.each do |hero|%>
-  <img src= <%=hero.img%> alt="hero image" >
-<%end%>
+
+
+<div style="width: 100%; overflow: hidden;">
+
+  <div style="width: 900px; float: left;">
+    <h1><%=@cards.last.player_class%> Cards!</h1>
+    <%@cards.each do |card|%>
+      <img src= <%=card.img%> alt="class card image" >
+    <%end%>
+  </div>
+  <div style="margin-left: 600px;">
+    <h1>Neutral Cards!</h1>
+    <%@neutral_cards.each do |card|%>
+      <img src= <%=card.img%> alt="neutral card image" >
+    <%end%>
+  </div>
+</div>
