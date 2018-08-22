@@ -7,7 +7,7 @@ class CardsController < ApplicationController
   end
 
   def create_deck
-
+    
   end
 
 
