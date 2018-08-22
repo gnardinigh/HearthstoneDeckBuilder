@@ -3,6 +3,10 @@
 
 <h1>index</h1>
 
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
 
 <div style="width: 100%; overflow: hidden;">
 

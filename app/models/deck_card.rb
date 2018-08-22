@@ -12,10 +12,16 @@ class DeckCard < ApplicationRecord
     @card = get_card(params)
     @deck ={}
 
-      @user_deck Deck.new
+  end
+
     #receive params
 
+  def create
 
+    deck.each do |card,num|
+      DeckCard.create(card_id,deck_id)
+    end
+  end
 
 
 
