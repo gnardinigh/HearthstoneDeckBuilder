@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :decks
   resources :users
 
+  # get '/profile', to: 'users/show', as: 'profile'
+  # get '/login', to: 'sessions#new', as: 'login'
+  # post 'login', to: 'sessions#new'
 
 post '/deckcards/create', to: 'deckcards#create'
 
