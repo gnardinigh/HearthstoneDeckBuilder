@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Card.destroy_all
 
 require 'unirest'
 require 'httparty'
@@ -24,7 +24,7 @@ card_sets = response.body#hash that looks like "Set Name" => [{card_1_info},...,
 # to delete unwanted cards than to make conditionals for keeping wanted cards
 card_sets.each do |set,cards_array|
   cards_array.delete_if do |card|
-     card["type"] == "Hero" || card["type"] == "Hero Power" || card["type"] == "Enchantment" || card["playerClass"] == nil || card["playerClass"] == "Dream" || card["playerClass" == "Death Knight"] || card["cost"] == nil || HTTParty.get(card['img']).response.class.to_s != 'Net::HTTPOK'
+     card["type"] == "Hero Power" || card["type"] == "Enchantment" || card["playerClass"] == nil || card["playerClass"] == "Dream" || card["playerClass" == "Death Knight"] || card["cost"] == nil || HTTParty.get(card['img']).response.class.to_s != 'Net::HTTPOK'
   end
 end
 
@@ -44,13 +44,25 @@ all_cards = all_cards.flatten
 # this code seeds the Card records/instances
 
 all_cards.each do |card|
-  Card.create(name:card["name"],
-              img:card["img"],
-              cost:card["cost"],
-              attack:card["attack"],
-              health:card["health"],
-              rarity:card["rarity"],
-              player_class:card["playerClass"],
-              race:card["type"],
-              card_set:card["cardSet"])
+  if card["type"] == "Hero"
+    Card.create(name:card["name"],
+                img:card["imgGold"],
+                cost:card["cost"],
+                attack:nil,
+                health:30,
+                rarity:nil,
+                player_class:card["playerClass"],
+                race:"Hero",
+                card_set:nil)
+  else
+    Card.create(name:card["name"],
+                img:card["img"],
+                cost:card["cost"],
+                attack:card["attack"],
+                health:card["health"],
+                rarity:card["rarity"],
+                player_class:card["playerClass"],
+                race:card["type"],
+                card_set:card["cardSet"])
+  end
 end

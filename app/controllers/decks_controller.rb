@@ -1,2 +1,6 @@
 class DecksController < ApplicationController
+
+  
+
+
 end

@@ -1,7 +1,10 @@
 class CardsController < ApplicationController
 
   def index
-    @cards = Card.all
+    @cards = Card.player_class("Mage")
+    @heroes = Card.heroes
   end
+
+
 
 end
