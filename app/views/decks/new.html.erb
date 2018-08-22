@@ -9,7 +9,7 @@
   <div style="width: 900px; float: left;">
     <h1><%=@cards.last.player_class%> Cards!</h1>
     <%@cards.each do |card|%>
-        <%= form_tag({controller: "deckcards", action: "create"}, method: "post") do %>
+        <%= form_tag({controller: "deck_cards", action: "add_to_deck"}, method: "post") do %>
 
           <%=select_tag "count","<option>0 - #{card.id}</option><option>1 - #{card.id}</opti#{card.id}</option>".html_safe%>
           <%= submit_tag("Submit") %>
@@ -20,7 +20,7 @@
   <div style="margin-left: 600px;">
     <h1>Neutral Cards!</h1>
     <%@neutral_cards.each do |card|%>
-                                        <%= form_tag({controller: "deckcards", action: "create"}, method: "post") do %>
+                                        <%= form_tag({controller: "deck_cards", action: "add_to_deck"}, method: "post") do %>
 
                                           <%=select_tag :num_cards,"<option>0 - #{card.id}</option><option>1 - #{card.id}</option><option>2 - #{card.id}</option>".html_safe%>
                                           <%= submit_tag("Submit") %>

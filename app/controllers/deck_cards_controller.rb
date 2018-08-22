@@ -1,7 +1,10 @@
 class DeckCardsController < ApplicationController
 
-  def create
-    byebug
+
+  def
+
   end
+
+
 
 end

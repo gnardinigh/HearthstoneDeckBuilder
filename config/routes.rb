@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # get '/login', to: 'sessions#new', as: 'login'
   # post 'login', to: 'sessions#new'
 
-post '/deckcards/create', to: 'deckcards#create'
+post '/deck_cards/add_to_deck', to: 'deck_cards#add_to_deck'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
