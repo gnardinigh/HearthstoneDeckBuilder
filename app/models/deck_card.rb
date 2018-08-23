@@ -6,7 +6,7 @@ class DeckCard < ApplicationRecord
 
     #receive params
 
-  Deck
+
 
 
 
