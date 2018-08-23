@@ -17,7 +17,7 @@ class DecksController < ApplicationController
     repeat.times do
       DeckCard.create(deck_id: Deck.last.id, card_id: params[:count][-5..-1].to_i)
     end
-    flash[:notice] = "Created #{repeat} instances of #{DeckCard.last.card.name} in deck number #{DeckCard.last.deck.id}."
+    flash[:notice] = "Created #{repeat} instances of #{DeckCard.last.card.name} in deck number #{Deck.last.id}."
     redirect_to new_deck_path(commit: @@chosen_class)
   end
 
