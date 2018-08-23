@@ -18,16 +18,11 @@
     <%@cards.each do |card|%>
 
       <div class="card_gallery">
-      <%= form_tag build_deck_path, method: :post, class: "card radio buttons" do %>
-        <img class="card_img" src= "<%=card.img%>" alt="class card image" ><br>
-        <input type="radio" id='one' name="card_choice[<%=card.id%>]" value=1 />
-        <label for='one'> <%=card.name%> x 1 </label>
-        <input type="radio" id='two' name="card_choice[<%=card.id%>]" value=2 />
-        <label for='two'> <%=card.name%> x 2 </label><br>
-        <input type="submit" value="Submit">
+
+      <%= link_to image_tag("#{card.img}", class: "card_img"), build_deck_path(commit: @chosen_class, id: card.id), method: :post %><br>
+
       </div>
 
-    <%end%>
   <%end%>
 </div>
   <!--div with neutral cards div-->
@@ -35,15 +30,7 @@
 
     <%@neutral_cards.each do |card|%>
       <div class="card_gallery">
-        <%= form_tag build_deck_path, method: :post, class: "card radio buttons" do %>
-        <img class="card_img" src= "<%=card.img%>" alt="class card image" ><br>
-        <input type="radio" id='one' name="card_choice[<%=card.id%>]" value=1 />
-        <label for='one'> <%=card.name%> x 1 </label>
-        <input type="radio" id='two' name="card_choice[<%=card.id%>]" value=2 />
-        <label for='two'> <%=card.name%> x 2 </label><br>
-        <input type="submit" value="Submit">
+       <%= link_to image_tag("#{card.img}", class: "card_img"), build_deck_path(commit: @chosen_class, id: card.id), method: :post %><br>
       </div>
-
-    <%end%>
   <%end%>
 </div>
