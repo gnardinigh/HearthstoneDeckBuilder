@@ -2,34 +2,48 @@
 
 
 
-
 <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
   <% end %>
 
-
+<!--main div with class and neutral card divs-->
 <div style="width: 100%; overflow: hidden;">
-
+  <!--div with class cards div-->
   <div style="width: 900px; float: left;">
     <h1><%=@cards.last.player_class%> Cards!</h1>
-    <%@cards.each do |card|%>
-        <%= form_tag({controller: "decks", action: "add_to_deck"}, method: "post") do %>
 
-          <%=select_tag "count","<option>0 - #{card.id}</option><option>1 - #{card.id}</option><option>2 - #{card.id}</option>".html_safe%>
-          <%= submit_tag("Submit") %>
-          <% end %>
-      <img src= <%=card.img%> alt="class card image" >
+      <%@cards.each do |card|%>
+
+        <%= form_tag build_deck_path, method: :post, class: "card radio buttons" do %>
+
+        <img src= "<%=card.img%>" alt="class card image" ><br>
+        <input type="radio" id='one' name="card_choice[<%=card.id%>]" value=1 />
+        <label for='one'> <%=card.name%> x 1 </label>
+        <input type="radio" id='two' name="card_choice[<%=card.id%>]" value=2 />
+        <label for='two'> <%=card.name%> x 2 </label><br>
+        <input type="submit" value="Submit">
+        <br><br><br>
+
+      <%end%>
     <%end%>
   </div>
-  <div style="margin-left: 600px;">
+  <!--div with neutral cards div-->
+  <div style="margin-left 600px">
     <h1>Neutral Cards!</h1>
-    <%@neutral_cards.each do |card|%>
-        <%= form_tag({controller: "decks", action: "add_to_deck"}, method: "post") do %>
 
-        <%=select_tag "count","<option>0 - #{card.id}</option><option>1 - #{card.id}</option><option>2 - #{card.id}</option>".html_safe%>
-        <%= submit_tag("Submit") %>
-        <% end %>
-      <img src= <%=card.img%> alt="neutral card image" >
+      <%@neutral_cards.each do |card|%>
+
+        <%= form_tag build_deck_path, method: :post, class: "card radio buttons" do %>
+
+        <img src= "<%=card.img%>" alt="class card image" ><br>
+        <input type="radio" id='one' name="card_choice[<%=card.id%>]" value=1 />
+        <label for='one'> <%=card.name%> x 1 </label>
+        <input type="radio" id='two' name="card_choice[<%=card.id%>]" value=2 />
+        <label for='two'> <%=card.name%> x 2 </label><br>
+        <input type="submit" value="Submit">
+        <br><br><br>
+
+      <%end%>
     <%end%>
   </div>
 </div>

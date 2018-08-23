@@ -13,9 +13,10 @@ class DecksController < ApplicationController
   end
 
   def add_to_deck
-    repeat = params[:count][0].to_i
+    byebug
+    repeat = card_params.values[0].to_i
     repeat.times do
-      DeckCard.create(deck_id: Deck.last.id, card_id: params[:count][-5..-1].to_i)
+      DeckCard.create(deck_id: Deck.last.id, card_id: card_params.keys[0].to_i)
     end
     flash[:notice] = "Created #{repeat} instances of #{DeckCard.last.card.name} in deck number #{Deck.last.id}."
     redirect_to new_deck_path(commit: @@chosen_class)
@@ -25,6 +26,11 @@ class DecksController < ApplicationController
 
   end
 
+  private
+
+  def card_params
+    params.require("card_choice").permit(Card.all.map{|card|card.id.to_s})
+  end
 
 
 
