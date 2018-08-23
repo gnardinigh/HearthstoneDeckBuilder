@@ -53,10 +53,20 @@ body {
 
 /* Style the tab content */
 .tabcontent {
-  display: none;
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,0.5fr));
+  grid-gap: 15px;
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+}
+
+.card_gallery {
+  width: 100%;
+}
+
+.card_img:hover {
+  transform: scale(1.5)
 }
 
 

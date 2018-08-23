@@ -8,43 +8,41 @@
 
   <!--tabs-->
 <div class="tab">
-  <button class="tablinks" onclick="openCards(event, '<%= @chosen_class %>')">Druid</button>
+  <button class="tablinks" onclick="openCards(event, '<%= @chosen_class %>')"><%=@chosen_class%></button>
   <button class="tablinks" onclick="openCards(event, 'Neutral')">Neutral</button>
 </div>
 
 <!--main div with class card divs-->
 <div id=<%= @chosen_class %> class="tabcontent">
-    <h1><%=@cards.last.player_class%> Cards!</h1>
 
     <%@cards.each do |card|%>
 
+      <div class="card_gallery">
       <%= form_tag build_deck_path, method: :post, class: "card radio buttons" do %>
-
-      <img src= "<%=card.img%>" alt="class card image" ><br>
-      <input type="radio" id='one' name="card_choice[<%=card.id%>]" value=1 />
-      <label for='one'> <%=card.name%> x 1 </label>
-      <input type="radio" id='two' name="card_choice[<%=card.id%>]" value=2 />
-      <label for='two'> <%=card.name%> x 2 </label><br>
-      <input type="submit" value="Submit">
-      <br><br><br>
+        <img class="card_img" src= "<%=card.img%>" alt="class card image" ><br>
+        <input type="radio" id='one' name="card_choice[<%=card.id%>]" value=1 />
+        <label for='one'> <%=card.name%> x 1 </label>
+        <input type="radio" id='two' name="card_choice[<%=card.id%>]" value=2 />
+        <label for='two'> <%=card.name%> x 2 </label><br>
+        <input type="submit" value="Submit">
+      </div>
 
     <%end%>
   <%end%>
 </div>
   <!--div with neutral cards div-->
 <div id='Neutral' class='tabcontent'>
-  <h1>Neutral Cards!</h1>
 
     <%@neutral_cards.each do |card|%>
-
-      <%= form_tag build_deck_path, method: :post, class: "card radio buttons" do %>
-      <img src= "<%=card.img%>" alt="class card image" ><br>
-      <input type="radio" id='one' name="card_choice[<%=card.id%>]" value=1 />
-      <label for='one'> <%=card.name%> x 1 </label>
-      <input type="radio" id='two' name="card_choice[<%=card.id%>]" value=2 />
-      <label for='two'> <%=card.name%> x 2 </label><br>
-      <input type="submit" value="Submit">
-      <br><br><br>
+      <div class="card_gallery">
+        <%= form_tag build_deck_path, method: :post, class: "card radio buttons" do %>
+        <img class="card_img" src= "<%=card.img%>" alt="class card image" ><br>
+        <input type="radio" id='one' name="card_choice[<%=card.id%>]" value=1 />
+        <label for='one'> <%=card.name%> x 1 </label>
+        <input type="radio" id='two' name="card_choice[<%=card.id%>]" value=2 />
+        <label for='two'> <%=card.name%> x 2 </label><br>
+        <input type="submit" value="Submit">
+      </div>
 
     <%end%>
   <%end%>

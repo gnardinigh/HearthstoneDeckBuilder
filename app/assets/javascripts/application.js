@@ -32,6 +32,6 @@ function openCards(evt, cardType) {
   }
 
   // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(cardType).style.display = "block";
+  document.getElementById(cardType).style.display = "grid";
   evt.currentTarget.className += " active";
 }
