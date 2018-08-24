@@ -10,11 +10,15 @@
 
 <ol>
   <% @user.decks.each do |deck| %>
-    hi
+    <img src='https://media-hearth.cursecdn.com/attachments/39/664/cardback_0.png'>
   <% end %>
 </ol>
 
 <hr>
+
+<li>
+  <%= button_to "Make New Deck", choose_hero_path, method: "get" %>
+</li>
 
 <li>
 <%= button_to "Log out", logout_path, method: "delete" %>

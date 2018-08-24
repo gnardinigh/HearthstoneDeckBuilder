@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
-  post '/decks/add_to_deck', to: 'decks#add_to_deck', as: 'build_deck'
+
+  post 'decks/index', to:'decks#index', as:'choose_hero'
 
   delete 'sessions/:id', :to =>'sessions#destroy', as: 'logout'
 
