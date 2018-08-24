@@ -26,6 +26,11 @@ body {
   grid-gap: 15px;
 }
 
+.deck_showcase {
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+}
+
 .tab {
   overflow: hidden;
   border: 1px solid #ccc;

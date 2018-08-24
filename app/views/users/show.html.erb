@@ -2,29 +2,32 @@
 
 <h3><%= flash[:notice] %></h3>
 
-
-
-<hr>
-
-<h4>Decks: </h4>
-
-<ol>
-  <% @user.decks.each do |deck| %>
-    <img src='https://media-hearth.cursecdn.com/attachments/39/664/cardback_0.png'>
-  <% end %>
-</ol>
-
-<hr>
-
+<ul>
 <li>
   <%= button_to "Make New Deck", choose_hero_path, method: "get" %>
 </li>
-
 <li>
 <%= button_to "Log out", logout_path, method: "delete" %>
 </li>
 
 
-<% if @user == current_user %>
-  <%= button_to "Delete Account", @user, method: :delete %>
-<% end %>
+
+
+</ul>
+
+<hr>
+
+<h4>Decks: </h4>
+
+<div class="deck_showcase">
+  <% @user.decks.each do |deck| %>
+  <div>
+    <h3 style="text-align: center;"><%=deck.name%></h3>
+    <img src='https://media-hearth.cursecdn.com/attachments/39/664/cardback_0.png'>
+  </div>
+  <% end %>
+</div>
+
+<hr>
+
+<
