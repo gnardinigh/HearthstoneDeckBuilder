@@ -17,11 +17,7 @@
 
     <%@cards.each do |card|%>
 
-      <div class="card_gallery">
-
-      <%= link_to image_tag("#{card.img}", class: "card_img"), build_deck_path(commit: @chosen_class, id: card.id), method: :post %><br>
-
-      </div>
+      <%= link_to image_tag("#{card.img}", class: "card_img"), build_deck_path(commit: @chosen_class, id: card.id), method: :post %>
 
   <%end%>
 </div>
@@ -29,8 +25,6 @@
 <div id='Neutral' class='tabcontent'>
 
     <%@neutral_cards.each do |card|%>
-      <div class="card_gallery">
-       <%= link_to image_tag("#{card.img}", class: "card_img"), build_deck_path(commit: @chosen_class, id: card.id), method: :post %><br>
-      </div>
+       <%= link_to image_tag("#{card.img}", class: "card_img"), build_deck_path(commit: @chosen_class, id: card.id), method: :post %>
   <%end%>
 </div>

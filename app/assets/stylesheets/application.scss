@@ -11,7 +11,9 @@
  * It is generally better to create a new file per style scope.
  *
  */
-
+h1 {
+  text-align: center;
+}
 body {
   background-image: url(4kBackground.jpg);
   background-position: center;
@@ -54,19 +56,20 @@ body {
 /* Style the tab content */
 .tabcontent {
   display:grid;
-  grid-template-columns: repeat(auto-fill,minmax(300px,0.5fr));
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
   grid-gap: 15px;
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
 }
 
-.card_gallery {
+.card_img{
   width: 100%;
 }
 
 .card_img:hover {
-  transform: scale(1.5)
+
+  transform: scale(1.25);
 }
 
 
