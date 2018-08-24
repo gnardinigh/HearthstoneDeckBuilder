@@ -4,7 +4,7 @@ class DecksController < ApplicationController
     @cards = Card.all
     @currentdeck = Deck.create()
     UserDeck.create(user_id:current_user.id,deck_id:@currentdeck.id)
-    byebug
+    # byebug
   end
 
   def new

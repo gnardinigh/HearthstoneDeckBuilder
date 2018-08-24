@@ -1,7 +1,5 @@
 <h1>Craft <%=@chosen_class%> Deck</h1>
 
-<%= button_to  "Sumbit", deck_path(Deck.last), method: 'get' %>
-
 <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
   <% end %>
