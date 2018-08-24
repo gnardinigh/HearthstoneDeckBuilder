@@ -1,5 +1,5 @@
 class DecksController < ApplicationController
-
+  before_action(:find_deck, only: [:show])
   def index
     @cards = Card.all
     @currentdeck = Deck.create()
@@ -41,7 +41,7 @@ class DecksController < ApplicationController
   end
 
   def show
-    find_deck
+    
   end
 
   private

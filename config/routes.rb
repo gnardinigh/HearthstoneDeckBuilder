@@ -7,13 +7,15 @@ Rails.application.routes.draw do
   resources :sessions
 
 
-  post 'decks/index', to:'decks#index', as:'choose_hero'
+  get 'decks/', to:'decks#index', as:'choose_hero'
+  
+  post 'decks/add_to_deck', to: 'decks#add_to_deck', as:'build_deck'
 
   post '/decks/remove_from_deck', to: 'decks#remove_from_deck', as: 'remove_deck'
 
   delete 'sessions/:id', :to =>'sessions#destroy', as: 'logout'
 
-  get 'sessions/new', :to => 'sessions#new', as: 'login'
+  get '/login', :to => 'sessions#new', as: 'login'
 
   post 'sessions/new', :to => 'sessions#create', as: 'profile'
 
