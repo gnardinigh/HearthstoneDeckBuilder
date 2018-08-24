@@ -80,13 +80,15 @@ body {
 }
 
 .card_in_deck {
-  height: 30px;
+  height: 40px;
   background-color: rgb(0, 0, 0);
+  border: 2px solid  beige
 }
 
 .card_name{
+  text-align:center;
+  line-height:40px;
   float: center;
-  text-align: center;
   justify-content: center;
   color: white;
   width: 100%;
