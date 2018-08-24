@@ -6,35 +6,30 @@
 
 <div class="class_icons">
   <div class = "class_picture">
-    <%= link_to image_tag("druid_face001.png") , new_deck_path(commit: 'Druid') %>
+    <%= link_to image_tag("druid_face001.png") , new_deck_path(commit: 'Druid', currentdeck: @currentdeck) %>
   </div>
   <div class = "class_picture">
-    <%= link_to image_tag("hunter_face003.png") , new_deck_path(commit: 'Hunter') %>
+    <%= link_to image_tag("hunter_face003.png") , new_deck_path(commit: 'Hunter', currentdeck: @currentdeck) %>
   </div>
   <div class = "class_picture">
-    <%= link_to image_tag("mage_face005.png") , new_deck_path(commit: 'Mage') %>
+    <%= link_to image_tag("mage_face005.png") , new_deck_path(commit: 'Mage', currentdeck: @currentdeck) %>
   </div>
   <div class = "class_picture">
-    <%= link_to image_tag("paladin_face007.png") , new_deck_path(commit: 'Paladin') %>
+    <%= link_to image_tag("paladin_face007.png") , new_deck_path(commit: 'Paladin', currentdeck: @currentdeck) %>
   </div>
   <div class = "class_picture">
-    <%= link_to image_tag("priest_face009.png") , new_deck_path(commit: 'Priest') %>
+    <%= link_to image_tag("priest_face009.png") , new_deck_path(commit: 'Priest', currentdeck: @currentdeck) %>
   </div>
   <div class = "class_picture">
-    <%= link_to image_tag("rogue_face011.png") , new_deck_path(commit: 'Rogue') %>
+    <%= link_to image_tag("rogue_face011.png") , new_deck_path(commit: 'Rogue', currentdeck: @currentdeck) %>
   </div>
   <div class = "class_picture">
-    <%= link_to image_tag("shaman_face013.png") , new_deck_path(commit: 'Shaman') %>
+    <%= link_to image_tag("shaman_face013.png") , new_deck_path(commit: 'Shaman', currentdeck: @currentdeck) %>
   </div>
   <div class = "class_picture">
-    <%= link_to image_tag("warlock_face015.png") , new_deck_path(commit: 'Warlock') %>
+    <%= link_to image_tag("warlock_face015.png") , new_deck_path(commit: 'Warlock', currentdeck: @currentdeck) %>
   </div>
-    <%= link_to image_tag("warrior_face017.png") , new_deck_path(commit: 'Warrior') %>
+  <div class = "class_picture">
+    <%= link_to image_tag("warrior_face017.png") , new_deck_path(commit: 'Warrior', currentdeck: @currentdeck) %>
   </div>
-</div>
-<div style="float: left;">
-  <ul>
-    <% Deck.last.deck_cards.each do |card| %>
-    <% end %>
-  </ul>
 </div>

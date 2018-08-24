@@ -2,10 +2,11 @@ class DecksController < ApplicationController
 
   def index
     @cards = Card.all
-    Deck.create()
+    @currentdeck = Deck.create()
   end
 
   def new
+    @currentdeck = Deck.find_by(id: params[:currentdeck])
     @chosen_class = params[:commit]
     @cards = Card.player_class(@chosen_class)
     @neutral_cards = Card.player_class("Neutral")
@@ -14,8 +15,8 @@ class DecksController < ApplicationController
 
   def add_to_deck
 
-    @chosen_class = card_params[:class]
-    @cid = card_params[:id].to_i
+    @chosen_class = params[:commit]
+    @cid = params[:id].to_i
 
     if Deck.deck_full?
       flash[:notice] = "Deck is full! Cannot add more cards."
@@ -26,7 +27,7 @@ class DecksController < ApplicationController
       DeckCard.create(deck_id: Deck.last.id, card_id: @cid)
       flash[:notice] = "Created an instance of #{DeckCard.last.card.name} in deck number #{Deck.last.id}. Your deck now contains #{Deck.last.deck_cards.count} cards."
     end
-    redirect_to new_deck_path(commit: @chosen_class)
+    redirect_to new_deck_path(commit: @chosen_class, currentdeck: Deck.last)
   end
 
   def create

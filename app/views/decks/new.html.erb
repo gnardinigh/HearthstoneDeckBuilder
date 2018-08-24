@@ -6,6 +6,15 @@
     <div class="notice"><%= flash[:notice] %></div>
   <% end %>
 
+  <!--current card display -->
+<div class="current_deck">
+  <%@currentdeck.deck_cards.uniq.each do |card| %>
+    <div class="card_in_deck">
+      <%= card.card.name %>
+    </div>
+    <%end%>
+</div>
+
   <!--tabs-->
 <div class="tab">
   <button class="tablinks" onclick="openCards(event, '<%= @chosen_class %>')"><%=@chosen_class%></button>
