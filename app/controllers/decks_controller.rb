@@ -32,12 +32,26 @@ class DecksController < ApplicationController
     redirect_to new_deck_path(commit: @chosen_class, currentdeck: Deck.last)
   end
 
+  def remove_from_deck
+    @chosen_class = params[:commit]
+    @cid = params[:id].to_i
+
+    DeckCard.find(@cid).delete
+    redirect_to new_deck_path(commit: @chosen_class, currentdeck: Deck.last)
+  end
+
+  def show
+    find_deck
+  end
+
   private
 
   def card_params
     params.require("commit").permit("class","id")
   end
 
-
+  def find_deck
+    @deck = Deck.find(params[:id])
+  end
 
 end

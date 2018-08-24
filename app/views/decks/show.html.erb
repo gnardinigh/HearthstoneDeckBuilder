@@ -1,1 +1,7 @@
+<h1><%= @deck.name %></h1>
 
+<div class="card_gallery">
+  <% @deck.cards.each do |card| %>
+    <%=image_tag("#{card.img}", class: "display_card_image")%>
+  <%end%>
+</div>

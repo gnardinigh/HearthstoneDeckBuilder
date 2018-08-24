@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   post 'decks/index', to:'decks#index', as:'choose_hero'
 
+  post '/decks/remove_from_deck', to: 'decks#remove_from_deck', as: 'remove_deck'
+
   delete 'sessions/:id', :to =>'sessions#destroy', as: 'logout'
 
   get 'sessions/new', :to => 'sessions#new', as: 'login'
