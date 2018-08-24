@@ -3,7 +3,7 @@ class DecksController < ApplicationController
   def index
     @cards = Card.all
     @currentdeck = Deck.create()
-    UserDeck.create(user_id:current_user.id,deck_id:@currentdeck.id)
+    UserDeck.create(user_id: current_user.id, deck_id:@currentdeck.id)
     # byebug
   end
 
@@ -40,15 +40,20 @@ class DecksController < ApplicationController
     redirect_to new_deck_path(commit: @chosen_class, currentdeck: Deck.last)
   end
 
+  def give_name
+    Deck.last.update(name: params[:name])
+    redirect_to deck_path(Deck.last)
+  end
+
   def show
     
   end
 
   private
 
-  def card_params
-    params.require("commit").permit("class","id")
-  end
+  # def card_params
+  #   params.require("commit").permit("class","id")
+  # end
 
   def find_deck
     @deck = Deck.find(params[:id])

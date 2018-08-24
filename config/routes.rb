@@ -17,9 +17,11 @@ Rails.application.routes.draw do
 
   get '/login', :to => 'sessions#new', as: 'login'
 
-  post 'sessions/new', :to => 'sessions#create', as: 'profile'
+  post 'profile', :to => 'sessions#create', as: 'profile'
 
   get 'users/new', :to => 'users#new', as: 'create_user'
+
+  post 'decks/give_name', to: 'decks#give_name', as: 'submit_deck'
 
 
   # get '/profile', to: 'users/show', as: 'profile'
