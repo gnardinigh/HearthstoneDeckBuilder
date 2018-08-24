@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   post '/decks/add_to_deck', to: 'decks#add_to_deck', as: 'build_deck'
 
+  post '/decks/remove_from_deck', to: 'decks#remove_from_deck', as: 'remove_deck'
+
   delete 'sessions/:id', :to =>'sessions#destroy', as: 'logout'
 
   get 'sessions/new', :to => 'sessions#new', as: 'login'

@@ -9,12 +9,13 @@
   <!--current card display -->
 <div class="current_deck">
   <%@currentdeck.deck_cards.uniq{|c| c.card.name}.each do |card| %>
-    <div class="card_in_deck">
-      <div class="card_name"><%= card.card.name %>
-        <div class="count_of_card"><%=@currentdeck.deck_cards.count{|deck_card| card.card.name == deck_card.card.name} %></div>
+    <%= link_to  remove_deck_path(commit: @chosen_class, id: card.id), :method => 'post' do %>  
+      <div class="card_in_deck">
+        <div class="card_name"><%= card.card.name %>
+          <div class="count_of_card"><%=@currentdeck.deck_cards.count{|deck_card| card.card.name == deck_card.card.name} %></div>
+        </div> 
       </div>
-        
-    </div>
+    <%end%>
   <%end%>
 </div>
 
