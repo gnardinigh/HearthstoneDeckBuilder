@@ -36,7 +36,10 @@ class DecksController < ApplicationController
 
     DeckCard.find(@cid).delete
     redirect_to new_deck_path(commit: @chosen_class, currentdeck: Deck.last)
-    
+  end
+
+  def show
+    find_deck
   end
 
   private
@@ -45,6 +48,8 @@ class DecksController < ApplicationController
     params.require("commit").permit("class","id")
   end
 
-
+  def find_deck
+    @deck = Deck.find(params[:id])
+  end
 
 end

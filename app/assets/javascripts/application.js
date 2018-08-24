@@ -14,6 +14,14 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+    // all custom jQuery will go here
+    var $window = $(window),
+       $stickyEl = $('.current_deck'),
+       elTop = $stickyEl.offset().top;
+
+   $window.scroll(function() {
+        $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
+    });
 
 function openCards(evt, cardType) {
   // Declare all variables
