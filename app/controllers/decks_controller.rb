@@ -30,10 +30,6 @@ class DecksController < ApplicationController
     redirect_to new_deck_path(commit: @chosen_class, currentdeck: Deck.last)
   end
 
-  def create
-
-  end
-
   private
 
   def card_params

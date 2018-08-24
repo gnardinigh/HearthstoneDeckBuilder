@@ -1,33 +1,56 @@
 class UsersController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create]
-  def new
 
+  before_action :find_user, only: [:show]
+
+  def show
+    render :show
   end
+
+  def profile
+    render :show
+  end
+
+  def new
+    @user = User.new
+    render :new
+  end
+
   def create
-    @user = User.find_by({ username: params[:username] })
-    if !!@user && @user.authenticate(params[:password])
-      flash[:notice] = "Successfully logged in #{@user.username}!"
-      redirect_to @user
+    @user = User.create(user_params)
+    if @user.valid?
+      flash[:notice] = "Signup successful! Welcome, #{@user.username}"
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else
-      flash[:notice] = 'Incorrect username or password.'
-      redirect_to profile_path
+      render :new
     end
   end
 
   def edit
-    current_user
     render :edit
   end
 
   def update
     if @user.update(user_params)
-      flash[:notice] = 'Updated user information.'
-
+      flash[:notice] = "Successfully updated profile"
+      redirect_to @user
     else
       render :edit
     end
   end
 
-  private
+  def destroy
+    current_user.destroy
+    flash[:notice] = "Deleted account for #{@user.username}"
+    redirect_to new_user_path
+  end
 
+  private
+  def find_user
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:username, :password)
+  end
 end

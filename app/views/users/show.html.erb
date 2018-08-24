@@ -1,0 +1,26 @@
+<h1>Profile Page for <%= @user.username %></h1>
+
+<h3><%= flash[:notice] %></h3>
+
+
+
+<hr>
+
+<h4>Decks: </h4>
+
+<ol>
+  <% @user.decks.each do |deck| %>
+    hi
+  <% end %>
+</ol>
+
+<hr>
+
+<li>
+<%= button_to "Log out", logout_path, method: "delete" %>
+</li>
+
+
+<% if @user == current_user %>
+  <%= button_to "Delete Account", @user, method: :delete %>
+<% end %>
