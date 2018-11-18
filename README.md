@@ -1,24 +1,37 @@
-# README
+# Hearthstone Deck Creator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hearthstone Deck Creator is Rails web app that lets users group Hearthstone playing cards into decks of 30.
+Users can save, compare, and edit their decks. In the actual Hearthstone game, players can create decks
+in similar fashion but the game's deck creator UI/UX is cumbersome. This web app is therefore meant to be a 
+fast and easy way to experiment with deck composition outside of the game.
 
-Things you may want to cover:
+Both the frontend and backend are written with Ruby on Rails, so all of the views are written in HTML with
+embedded Ruby code. However, using the site you'll notice dynamic features on the screens, including card
+enlargment on hover and a deck roster pane that updates immediately when a new card is added to a deck. 
+This is all done by using a JavaScript script to manipulate the DOM elements we created in our html-erb
+files. Although Ruby on Rails apps have their limitations, you can still use Rails to build interactive 
+WebApps that fit the user-interactive 'Web 2.0' paradigm!
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+Fork and clone this repo. 
 
-* Configuration
+To run this software locally you'll have to seed the database with card information. Register an account
+with mashape and enter your API key into the seeds file in the response object. If you need to push your 
+clone to gibhut for any reason **remember to delete your key beforehand**
 
-* Database creation
+### Installing
 
-* Database initialization
+Fork and clone
 
-* How to run the test suite
+rake db:create
+rake db:migrate
+rake db:seed
+rails s
 
-* Services (job queues, cache servers, search engines, etc.)
+use rails console to explore the card data and
+view image sources
 
-* Deployment instructions
+## Acknowledgments
 
-* ...
+* My lab partner Tyler Nodell, who also loves Hearthstone!
