@@ -20,6 +20,11 @@ To run this software locally you'll have to seed the database with card informat
 with mashape and enter your API key into the seeds file in the response object. If you need to push your 
 clone to gibhut for any reason **remember to delete your key beforehand**
 
+Since our seeding algorithm uses HTTP response types to clean off card data we don't want, seeding may 
+take a while depending on your internet connection. If you want to track seeding progress, I added
+some console logs to print out the current card set your cleaning. If you want more detailed tracking
+you can alter the card_sets iterator in line 25 of the seeds.rb file to print any milestone you'd like.
+
 ### Installing
 
 Fork and clone
