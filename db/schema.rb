@@ -37,8 +37,6 @@ ActiveRecord::Schema.define(version: 2018_08_24_153227) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "card_id"
-    t.index ["card_id"], name: "index_decks_on_card_id"
   end
 
   create_table "user_decks", force: :cascade do |t|

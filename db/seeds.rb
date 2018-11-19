@@ -19,10 +19,11 @@ response = Unirest.get "https://omgvamp-hearthstone-v1.p.mashape.com/cards/",
 
 card_sets = response.body#hash that looks like "Set Name" => [{card_1_info},...,{card_n_info}]
 
-
+puts 'CARDS DOWNLOADED'
 # this code iterates over each array of cards and deletes irrelevant cards. Cleaner
 # to delete unwanted cards than to make conditionals for keeping wanted cards
 card_sets.each do |set,cards_array|
+  puts set
   cards_array.delete_if do |card|
      card["type"] == "Hero Power" || card["type"] == "Enchantment" || card["playerClass"] == nil || card["playerClass"] == "Dream" || card["playerClass" == "Death Knight"] || card["cost"] == nil || HTTParty.get(card['img']).response.class.to_s != 'Net::HTTPOK'
   end

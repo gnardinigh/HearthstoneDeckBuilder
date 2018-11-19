@@ -39,4 +39,15 @@ view image sources
 
 ## Acknowledgments
 
-* My lab partner Tyler Nodell, who also loves Hearthstone!
+* My project partner Tyler Nodell, who also loves Hearthstone!
+
+## Screen Caps
+
+### Choose a hero for your deck
+![choose hero](./readmeimgs/hs1.png)
+### Select cards from your hero's class...
+![choose class card](./readmeimgs/hs2.png)
+### ...or from the neutral card base!
+![choose neutral card](./readmeimgs/hs3.png)
+### Preview your decks from your deck library
+![view deck](./readmeimgs/hs4.png)
